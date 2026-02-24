@@ -1,7 +1,7 @@
 name: Second Workflow
 on: workflow_dispatch
 jobs:
-  Dev:
+  Dev-env:
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting
@@ -10,8 +10,8 @@ jobs:
         run: echo "Done - bye!"
       - name: Print name
         run: echo "Swathi!"
-  Test:
-    needs: Dev
+  Test-env:
+    needs: Dev-env
     runs-on: ubuntu-latest
     steps:
       - name: greeting
@@ -20,8 +20,8 @@ jobs:
         run: echo "bye!"
       - name: Print name
         run: echo "Karthi!"
-  QA:
-    needs: Test
+  QA-env:
+    needs: Test-env
     runs-on: ubuntu-latest
     steps:
       - name: greeting
