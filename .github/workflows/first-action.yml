@@ -1,5 +1,5 @@
-name: third Workflow
-on: workflow_dispatch
+name: fourth Workflow
+on: [push, workflow_dispatch]
 jobs:
   Dev-env:
     runs-on: ubuntu-latest
