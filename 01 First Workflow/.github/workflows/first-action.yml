@@ -14,9 +14,9 @@ jobs:
     needs: first-job
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
+      - name: greeting
+        run: echo "HelloWorld!"
       - name: Print goodbye
-        run: echo "Done - bye!"
+        run: echo "bye!"
       - name: Print name
-        run: echo "Swathi!"    
+        run: echo "Karthi!"    
