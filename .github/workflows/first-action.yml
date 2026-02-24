@@ -1,7 +1,7 @@
-name: First Workflow
+name: Second Workflow
 on: workflow_dispatch
 jobs:
-  first-job:
+  Dev:
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting
@@ -10,8 +10,8 @@ jobs:
         run: echo "Done - bye!"
       - name: Print name
         run: echo "Swathi!"
-  deploy:
-    needs: first-job
+  Test:
+    needs: Dev
     runs-on: ubuntu-latest
     steps:
       - name: greeting
@@ -19,4 +19,14 @@ jobs:
       - name: Print goodbye
         run: echo "bye!"
       - name: Print name
-        run: echo "Karthi!"    
+        run: echo "Karthi!"
+  QA:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: greeting
+        run: echo "HiiiiiWorld!"
+      - name: Print goodbye
+        run: echo "bye-bye!"
+      - name: Print name
+        run: echo "Prasad!"         
